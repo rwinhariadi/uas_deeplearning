@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend-service
+    ports:
+      - "8080:8080" # Map port 8080 di host ke container
+    volumes:
+      - ./backend:/app # Sync folder backend ke container (dev mode)
+    environment:
+      - FLASK_ENV=development
+    depends_on:
+      - frontend
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend-service
+    ports:
+      - "3000:80" # Map port 3000 di host ke container
+    volumes:
+      - ./frontend:/usr/share/nginx/html # Sync folder frontend ke container (dev mode)

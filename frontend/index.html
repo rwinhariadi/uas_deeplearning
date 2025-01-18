@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pisang Matang Detector</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar dengan tombol navigasi langsung -->
+    <div class="nav-bar">
+      <button onclick="window.location.href='history.html'" class="nav-btn">History</button>
+    </div>
+
+    <div class="container">
+      <h1>CEK KEMATANGAN PISANG</h1>
+
+      <!-- Placeholder untuk ikon cloud dengan gambar cloud.png -->
+      <div class="icon-container" id="icon-container">
+        <img src="static/cloud.png" alt="Cloud Icon" class="cloud-icon" />
+      </div>
+
+      <!-- Pratinjau gambar dengan border hitam setelah gambar diunggah -->
+      <img
+        id="uploaded-image"
+        alt="uploaded image preview"
+        style="
+          display: none;
+          max-width: 100%;
+          border: 2px solid black;
+          margin-top: 20px;
+        "
+      />
+
+      <!-- Form untuk upload gambar -->
+      <form id="upload-form">
+        <!-- Input file tersembunyi -->
+        <input
+          type="file"
+          id="file-input"
+          accept="image/*"
+          style="display: none"
+        />
+
+        <!-- Label untuk tombol upload, berfungsi sebagai pemicu dialog file -->
+        <label for="file-input" class="upload-btn"> UPLOAD FOTO </label>
+      </form>
+
+      <!-- Hasil prediksi -->
+      <div class="result">
+        <p>Warna : <span id="color">-</span></p>
+        <p>Status : <span id="result">-</span></p>
+      </div>
+    </div>
+
+    <!-- Minion di kiri dan kanan -->
+    <div class="minion-container">
+      <img src="static/minion.png" alt="Minion Left" class="minion left" />
+      <img src="static/minion.png" alt="Minion Right" class="minion right" />
+    </div>
+
+    <!-- JavaScript untuk menangani upload dan tampilan hasil -->
+    <script src="script.js"></script>
+  </body>
+</html>

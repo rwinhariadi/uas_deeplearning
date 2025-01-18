@@ -1,0 +1,202 @@
+/* Mengatur tampilan latar belakang dan font */
+body {
+  background-image: url("static/pisang.jpeg");
+  background-size: cover;
+  background-position: center;
+  font-family: Verdana, sans-serif;
+  color: #2e2d4d;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  backdrop-filter: blur(10px);
+}
+
+/* Container utama */
+.container {
+  background-color: rgb(255 255 255 / 85%);
+  padding: 30px;
+  border-radius: 10px;
+  width: 500px;
+  box-shadow: 0 8px 25px rgb(0 0 0 / 85%);
+  position: relative;
+  z-index: 1;
+  min-height: 500px;
+  box-sizing: border-box;
+}
+
+/* Judul halaman */
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #4c4a68;
+  margin-bottom: 20px;
+}
+
+/* Placeholder untuk ikon cloud */
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px dashed #4c4a68;
+  padding: 40px;
+  border-radius: 15px;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  width: 100%;
+  height: 300px;
+  box-sizing: border-box;
+}
+
+/* Gaya untuk ikon cloud */
+.cloud-icon {
+  width: 100px;
+  opacity: 0.7;
+}
+
+/* Gaya untuk pratinjau gambar */
+#uploaded-image {
+  display: block;
+  max-width: 300px;
+  max-height: 300px;
+  width: 100%;
+  height: auto;
+  border: 2px solid #4c4a68; /* Border solid */
+  margin-top: 20px;
+  object-fit: contain; /* Menjaga proporsi gambar */
+  background-color: rgb(255 255 255 / 49.3%);
+  border-radius: 10px; /* Agar konsisten dengan container */
+}
+
+/* Tombol upload */
+.upload-btn {
+  display: inline-block;
+  background-color: #4c4a68;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Tombol navigasi (History dan Back to Home) */
+.nav-bar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.nav-btn {
+  background-color: #4c4a68;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 20%);
+  margin-top: 20px;
+}
+
+.nav-btn:hover {
+  background-color: #6c6a89;
+}
+
+/* Hasil prediksi */
+.result {
+  font-size: 1.2em;
+  background-color: rgb(76 74 104 / 5%);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  color: #4c4a68;
+  text-align: center;
+}
+
+/* Minion kiri dan kanan di bagian bawah */
+.minion-container {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 0;
+}
+
+.minion {
+  width: 160px;
+  margin: 0 20px;
+  filter: drop-shadow(0 4px 4px rgb(0 0 0 / 50%));
+}
+
+/* Mengatur tampilan latar belakang dan font */
+body.history-page {
+  background-image: url("static/pisang.jpeg");
+  background-size: cover;
+  background-position: center;
+  font-family: Verdana, sans-serif;
+  color: #2e2d4d;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  backdrop-filter: blur(10px);
+}
+
+/* Container khusus untuk halaman history */
+.history-container {
+  background-color: rgb(255 255 255 / 85%);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 1200px; /* Lebar container sesuai 5 kartu */
+  box-shadow: 0 8px 25px rgb(0 0 0 / 85%);
+  margin: 40px auto; /* Tengah secara horizontal */
+  box-sizing: border-box;
+  height: 650px; /* Tinggi tetap untuk 5x2 layout */
+  overflow-y: auto; /* Aktifkan scroll jika lebih dari 10 kartu */
+}
+
+/* Grid untuk kartu di halaman history */
+#history-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 kolom */
+  gap: 20px; /* Jarak antar kartu */
+  justify-content: center;
+}
+
+/* Gaya untuk setiap kartu */
+.history-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 20%);
+  text-align: center;
+  height: 250px; /* Kurangi tinggi kartu */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.history-card:hover {
+  transform: translateY(-5px); /* Efek hover */
+  box-shadow: 0 6px 10px rgb(0 0 0 / 30%);
+}
+
+/* Gaya untuk gambar di dalam kartu */
+.history-card img {
+  width: 100%; /* Gambar mengisi lebar penuh kartu */
+  height: 175px; /* Tetapkan tinggi seragam untuk semua gambar */
+  border-radius: 10px;
+  margin-bottom: 10px;
+  object-fit: cover; /* Pangkas gambar agar pas dalam area */
+}
+
+/* Teks dalam kartu */
+.history-card p {
+  font-size: 1em;
+  margin: 1px 0;
+  color: #4c4a68;
+}

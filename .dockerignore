@@ -1,0 +1,4 @@
+# Ignore Git and CI/CD configuration files
+.github/
+.gitignore
+.gitattributes
